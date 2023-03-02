@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main">
         <form action="">
-            <label for="txtUsername">Username</label> 
+            <label for="txtUsername">ten dang nhap</label>
             <input type="text" name="" id="txtUsername">
-            <label for="txtpassword">Password</label> 
+            <label for="txtpassword">mat khau</label>
             <input type="text" name="" id="txtmatkhau">
-            <button>Nút đăng nhập</button>
+            <button type="submit" id="loginBtn">Dang Nhap</button>
         </form>
     </div>
-   
-    
+
+<script>
+const loginBtn = document.querySelector('#loginBtn');
+
+function handleLogin(username, password) {
+    // xu ly dang nhap
+    if(username == 'admin' && password == 'admin') {
+        alert("thanh cong");
+        window.location.href = "dashboard.html";
+    }
+  }
+
+loginBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const username = document.querySelector('#txtUsername').value;
+  const password = document.querySelector('#txtmatkhau').value;
+  handleLogin(username, password);
+  
+});
+
+</script>
+
 </body>
+
 </html>
